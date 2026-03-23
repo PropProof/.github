@@ -1,0 +1,25 @@
+name: "🚀 Feature / Erweiterung"
+description: "Vorschlag für eine neue Funktion oder eine Erweiterung"
+title: "[FEATURE]: "
+labels: ["type: feature", "status: needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Welches Problem lösen wir?"
+      description: "Beschreibe kurz, warum der User diese Funktion braucht."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Lösungsvorschlag"
+      description: "Wie soll die Funktion technisch oder visuell umgesetzt werden?"
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: "Betroffene Bereiche"
+      options:
+        - label: "Frontend (UI/UX)"
+        - label: "Backend (API/DB)"
+        - label: "Infrastruktur"
