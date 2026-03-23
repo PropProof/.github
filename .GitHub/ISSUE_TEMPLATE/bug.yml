@@ -1,0 +1,27 @@
+name: "🐛 Bug Report"
+description: "Fehlerbericht"
+title: "[BUG]: "
+labels: ["type: bug", "priority: high"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Fehlerbeschreibung"
+      description: "Was genau passiert? Was sollte stattdessen passieren?"
+    validations:
+      required: true
+  - type: input
+    id: reproduction
+    attributes:
+      label: "Schritte zur Reproduktion"
+      placeholder: "1. Login klicken, 2. Passwort falsch eingeben..."
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Schweregrad"
+      options:
+        - "Blocker (System steht still)"
+        - "Major (Kernfunktion defekt)"
+        - "Minor (Schönheitsfehler)"
+    validations:
+      required: true
