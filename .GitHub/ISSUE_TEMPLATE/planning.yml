@@ -1,0 +1,32 @@
+name: "📅 Planning & Organisation"
+description: "Aufgaben für den Aufbau des Startups (Admin, Legal, Marketing)"
+title: "[PLAN]: "
+labels: ["type: planning"]
+body:
+  - type: markdown
+    attributes:
+      value: "Nutze dieses Template für alle organisatorischen Tasks außerhalb des Codes."
+  - type: input
+    id: objective
+    attributes:
+      label: "Was ist das Ziel?"
+      placeholder: "z.B. Geschäftskonto eröffnen"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Einzelschritte (Checkliste)"
+      placeholder: "- [ ] Banken vergleichen\n- [ ] Termin vereinbaren"
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priorität"
+      options:
+        - "P1 - Sofort erledigen"
+        - "P2 - Diese Woche"
+        - "P3 - Diesen Monat"
+        - "P4 - Dieses Jahr"
+        - "P5 - Backlog"
+    validations:
+      required: true
