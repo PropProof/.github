@@ -9,8 +9,8 @@ body:
   - type: input
     id: objective
     attributes:
-      label: "Was ist das Ziel?"
-      placeholder: "z.B. Geschäftskonto eröffnen"
+      label: "Was ist das Ziel/Arbeitsergebnis dieses Issues?"
+      placeholder: "z.B. Analyse als Word/PPP auf GDrive"
     validations:
       required: true
   - type: textarea
