@@ -1,0 +1,32 @@
+name: Checkbox to Label
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  apply-labels:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Labeler based on checkboxes
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body;
+            const labelsToAdd = [];
+
+            // Mapping: Was steht in der Checkbox -> Welches Label soll kommen
+            if (body.includes('- [x] AI Backbone')) labelsToAdd.push('ai backbone');
+            if (body.includes('- [x] Frontend (UI/UX)')) labelsToAdd.push('frontend');
+            if (body.includes('- [x] Bug')) labelsToAdd.push('bug');
+            if (body.includes('- [x] Infrastruktur')) labelsToAdd.push('infrastructure');
+
+            if (labelsToAdd.length > 0) {
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: labelsToAdd
+              });
+            }
