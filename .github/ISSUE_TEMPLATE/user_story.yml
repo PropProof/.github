@@ -1,0 +1,56 @@
+name: "👤 User Story"
+description: "Beschreibe eine neue Anforderung aus Sicht eines Nutzers."
+labels: ["user-story", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚀 Vision der User Story
+        Nutze dieses Template, um funktionale Anforderungen festzuhalten.
+  
+  - type: textarea
+    id: story_definition
+    attributes:
+      label: "Die Story"
+      description: "Folge dem Format: Als [Rolle] möchte ich [Ziel], um [Nutzen]."
+      placeholder: "Als Data Scientist möchte ich eine API-Schnittstelle zum Modell-Training haben, um Experimente schneller zu automatisieren."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Akzeptanzkriterien"
+      description: "Woran merken wir, dass diese Story fertig ist? (Checkliste)"
+      placeholder: |
+        - [ ] API Endpunkt /train ist erreichbar
+        - [ ] Parameter für Epochen und Learning Rate werden validiert
+        - [ ] Erfolgreiches Training liefert eine Model-ID zurück
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priorität (Business Value)"
+      options:
+        - "Must-have (P0)"
+        - "Should-have (P1)"
+        - "Could-have (P2)"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tech_stack
+    attributes:
+      label: "Betroffene Bereiche"
+      options:
+        - label: "Frontend (UI/UX)"
+        - label: "AI Backbone"
+        - label: "Infrastruktur"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Zusätzliche Notizen"
+      description: "Gibt es Abhängigkeiten oder technische Besonderheiten?"
